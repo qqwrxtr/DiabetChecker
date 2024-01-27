@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainblock">
+        <div class="row">
+            <div class="title">
+                <h3>Formular de evaluare a riscului de diabet zaharat tip 2</h3>
+                <p>Introduceti datele corect !!!</p>
+            </div>
+        </div>
+        <div class="formular">
+            <div class="varsta edit">
+                <label for="varsta" class="punct">
+                    <p>1. Varsta Dumneavoastra :</p>
+                </label>
+                <select name="varsta" id="age" class="select">
+                    <option value="0"></option>
+                    <option value="1">Sub 45 ani</option>
+                    <option value="2">Intre 45-54 ani</option>
+                    <option value="3">Intre 55-64 ani</option>
+                    <option value="4">Peste 64 ani</option>
+                </select>
+            </div>
+            <div class="masa_corp edit">
+            <label for="masa" class="punct">
+                <p>2. Indicile de masa corporala</p>
+            </label>
+            <!-- 
+            <select name="masa_corp" id="weight" class="select" onchange="weight()">
+                <option value="0"></option>
+                <option value="1">Mai mic de 25kg / m<sup>2</sup> </option>
+                <option value="2">Intre 25-30 kg / m<sup>2</sup> </option>
+                <option value="3">Peste 30kg / m <sup>2</sup> </option>
+            </select> -->
+                <div class="title2">
+                    <h4>Calculator a indicelui de masa corporala a dvs</h4>
+                </div>
+                <div class="height_weight">
+                    <input type="number" placeholder="ex : 180cm" id="height" class="input_edit" >
+                    <p class="fz">+</p>
+                    <input type="number" placeholder="ex : 56kg" id="weight" class="input_edit" onblur="raz()">
+                    <p class="fz">=</p>
+                    <p id="result" class="fz"></p><span class="fz">kg / m <sup>2</sup></span>
+                    <!-- <button id="raz" onclick="raz()">Calculeaza</button> -->
+                </div>
+                
+            </div>
+            <div class="talia edit">
+                <label for="talie" class="punct">
+                    <p>3. Circumferinta abdominala masurata sub rebordul costal (de obicei la nivel ombilical)</p>
+                </label>
+                <select name="talie" id="talia" class="select">
+                    <option value="0"><p>Sunteti Barbat sau Femeie?</p></option>
+                    <option value="1">Barbat</option>
+                    <option value="2">Femeie</option>
+                </select>
+                <div id="info1" style="display:none;">
+                    <select name="talie_barbat" id="barbat" class="select" onchange="barbat_talie()">
+                        <option value="0">Circumferinta abdominala :</option>
+                        <option value="1">Sub 94 cm</option>
+                        <option value="2">Intre 94-102 cm</option>
+                        <option value="3">Peste 102 cm</option>
+                    </select>
+                </div>
+                <div id="info2" style="display:none;">
+                    <select name="talie_femeie" id="femeie" class="select" onchange="femeie_talie()">
+                        <option value="0">Circumferinta abdominala :</option>
+                        <option value="1">Sub 80 cm</option>
+                        <option value="2">Intre 80 - 88 cm</option>
+                        <option value="3">Peste</option>
+                    </select>
+                </div>
+            </div>
+            <div class="exercitii edit">
+                <label for="ex" class="punct">
+                    <p>4. Practicati zilnic cel putin 30 de min de activitate
+                        fizica la locul de munca si/sau in timpul liber
+                    </p>
+                </label>
+                <select name="ex" id="exerc" class="select">
+                    <option value="0"></option>
+                    <option value="1">Da</option>
+                    <option value="2">Nu</option>
+                </select>
+            </div>
+            <div class="fructe edit">
+                <label for="ex" class="punct">
+                    <p>5. Cat de des mancati legume,fructe sau fructe de 
+                        padure
+                    </p>
+                </label>
+                <select name="ex" id="fructe" class="select">
+                    <option value="0"></option>
+                    <option value="1">In fiecare zi</option>
+                    <option value="2">Nu in fiecare zi</option>
+                </select>
+            </div>
+            <div class="tratament edit">
+                <label for="tratament" class="punct">
+                    <p>6. Ati luat vreodata tratament antihipertensiv in mod
+                        regulat?
+                    </p>
+                </label>
+                <select name="tratament" id="tratament" class="select">
+                    <option value="0"></option>
+                    <option value="1">Nu</option>
+                    <option value="2">Da</option>
+                </select>
+            </div>
+            <div class="glicemie edit">
+                <label for="glicemie" class="punct">
+                    <p>7. Ati avut vreodata valori crescute ale glicemiei(
+                        in timpul examinarii pentru o alta boala,in timpul sarcinii)?
+                    </p>
+                </label>
+                <select name="glicemie" id="glicemie" class="select">
+                    <option value="0"></option>
+                    <option value="1">Nu</option>
+                    <option value="2">Da</option>
+                </select>
+            </div>
+            <div class="rude_boln edit">
+                <label for="rude_boln" class="punct">
+                    <p>8. Aveti vreun membru apropiat al familiei sau alte rude 
+                        diagnosticate cu diabet(tipul 1 sau tipul 2)
+                    </p>
+                </label>
+                <select name="rude_boln" id="rude_boln" class="select">
+                    <option value="0"></option>
+                    <option value="1">Nu</option>
+                    <option value="2">Da :bunici , matusi , unchi sau var primar (dar nu parinti,frati,surori sau copii)</option>
+                    <option value="3">Da : parinte,frate,sora,sau propriul copil</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="row2">
+            <div class="buton">
+                <button id="afla" onclick="rezultat()">
+                    <p>Calculeaza</p>
+                </button>
+            </div>
+            <div class="scor_acumulat">
+                <div class="lala">
+                    <h3>Scor total</h3>
+                </div>
+                <div class="scor">
+                    <p id="scor"></p>
+                </div>
+            </div>
+            <div class="sanse">
+                <p id="sanse">
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
